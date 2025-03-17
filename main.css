@@ -1,0 +1,49 @@
+body{
+    background-color: rgb(78, 52, 23);
+}
+#all{
+    border:20px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    border-color: aliceblue;
+    background-color: rgb(92, 92, 92);
+    width: 500px;
+    height: 700px;
+    text-align: center;
+    margin-left: 300px;
+}
+
+h1{
+    color: red;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+#ListInput{
+    height: 50px;
+    width:400px;
+  
+    border: 2px solid chocolate;
+
+}
+.list{
+    width: 400px;
+    background-color: blue;
+
+}
+.element{
+    background-color: rgb(231, 10, 10);
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+   
+}
+.element p{
+    width: 200px;
+
+}
+
+.checkbox{
+width: 40px;
+border: 2px;
+border-radius: 20px;
+}
