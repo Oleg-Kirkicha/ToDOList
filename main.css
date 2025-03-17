@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(78, 52, 23);
+    background-color: rgb(194, 194, 194);
 }
 #all{
     border:20px;
@@ -7,16 +7,19 @@ body{
     display: flex;
     align-items: center;
     border-color: aliceblue;
-    background-color: rgb(92, 92, 92);
+    background-color: rgb(255, 255, 255);
     width: 500px;
     height: 700px;
     text-align: center;
     margin-left: 300px;
+    border-radius: 50px;
+    gap: 10px;
 }
 
 h1{
-    color: red;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: b83f45;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 70px;
 }
 #ListInput{
     height: 50px;
@@ -27,15 +30,16 @@ h1{
 }
 .list{
     width: 400px;
-    background-color: blue;
+
 
 }
 .element{
-    background-color: rgb(231, 10, 10);
+    background-color: rgb(255, 255, 255);
     width: 400px;
     display: flex;
     flex-direction: row;
    
+   height: 70px;
 }
 .element p{
     width: 200px;
@@ -43,7 +47,17 @@ h1{
 }
 
 .checkbox{
-width: 40px;
-border: 2px;
-border-radius: 20px;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: lightgray;
+    position: relative;
 }
+
+.checkbox:checked {
+ 
+}
+
+
