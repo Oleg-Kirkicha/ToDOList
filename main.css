@@ -69,7 +69,7 @@ h1{
 }
 
 .checkbox:checked {
-    background-color: green; /* Кольоровий фон при вибраному чекбоксі */
+    background-color: green; 
     border-color: green;
 }
 .checkbox:checked + p{
