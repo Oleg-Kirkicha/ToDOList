@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="uk">
     <head>
+        <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/avara" type="text/css"/> 
         <link rel="stylesheet" href="main.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Todolist</title>
     </head>
     <body>
-    
-    <div id="all">
-        <h1>Todolist</h1>
-        <div class="lists">
-            <input type="text" id="ListInput" placeholder="What needs to be done?">
+<div id="all">
+    <h1>Todolist</h1>
+    <div class="lists">
+        <input type="text" id="ListInput" placeholder="What needs to be done?">
+        <div class="element_container">
+            <div class="list">
+                <div class="element">
+                    <input class="checkbox" type="checkbox"><p>Text of work, longer version, veeeeeery long versionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</p>
+                </div>
+            </div>
 
-            <div class="list" id="list" >
+            <div class="list">
+                <div class="element">
+                    <input class="checkbox" type="checkbox"><p>Text of work</p>
+                </div>
+            </div>
 
-                <div class="element" id="element" ><input class="checkbox" type="checkbox" ><p>Text of work</p></div>
-
+            <div class="list">
+                <div class="element">
+                    <input class="checkbox" type="checkbox"><p>Text of work</p>
+                </div>
             </div>
         </div>
-        <script src="main.js"></script>
     </div>
+    <script src="main.js"></script>
+</div>
+
 </body>
 </html>
