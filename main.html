@@ -13,32 +13,12 @@
       
       <div class="lists grid gap-2 w-full">
         <input type="text" id="ListInput" placeholder="What needs to be done?" class="bg-[#d8c7ab] h-[50px] w-full p-[10px] text-lg outline-none focus:border-2 focus:border-black">
-        
-        <div class="element_container w-full">
-            <div class="element bg-[#462e20] min-h-[10%] w-full grid grid-cols-[24px_1fr] gap-2 p-2 border border-[#5f5f5f]">
-              <input class="checkbox w-[24px] h-[24px] rounded-[6px] bg-[#a06b45] border-[#8b4513] cursor-pointer transition-all" type="checkbox">
-              <p class="text-white font-[AvaraBold] font-bold text-[18px] leading-relaxed px-[10px] sm:text-[16px] max-w-full overflow-hidden">
-                Text of work, longer version, veeeeeery long versionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
-              </p>
-            </div>
-          </div>
-          
-          
-          
-          
-          <div class="element bg-[#462e20] min-h-[10%] w-full grid grid-cols-[24px_1fr] gap-2 p-2 border border-[#5f5f5f]">
-            <input class="checkbox w-[24px] h-[24px] rounded-[6px] bg-[#a06b45] border-[#8b4513] cursor-pointer transition-all" type="checkbox">
-            <p class="text-white font-[AvaraBold] font-bold text-[18px] leading-relaxed break-words px-[10px] sm:text-[16px]">Text of work</p>
-          </div>
-          
-          <div class="element bg-[#462e20] min-h-[10%] w-full grid grid-cols-[24px_1fr] gap-2 p-2 border border-[#5f5f5f]">
-            <input class="checkbox w-[24px] h-[24px] rounded-[6px] bg-[#a06b45] border-[#8b4513] cursor-pointer transition-all" type="checkbox">
-            <p class="text-white font-[AvaraBold] font-bold text-[18px] leading-relaxed break-words px-[10px] sm:text-[16px]">Text of work</p>
-          </div>
-        </div>
+        <div class="element_container w-full" id="elementContainer">
+        </div> 
       </div>
+
+      <button id="clearAll" type="button" class="font-[AvaraBold] text-black">Clear All</button>
     </div>
-    
-    <script src="main.js"></script>
   </body>
+  <script src="main.js"></script>
 </html>
