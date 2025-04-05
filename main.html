@@ -5,19 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todolist</title>
-    <link href="output.css" rel="stylesheet"> 
+    <link href="style.css" rel="stylesheet"> 
   </head>
-  <body class="bg-gray-300">
-    <div id="all" class="bg-white grid grid-cols-1 gap-4 p-5 max-w-[500px] w-full mx-auto rounded-xl">
-      <h1 class="text-[#462e20] font-[AvaraBold] text-[70px] font-normal text-center sm:text-[50px]">Todolist</h1>
-      
+  <body class="bg-[#1e1e1e]">
+    <div id="all" class="bg-[#2c2c2c] grid grid-cols-1 gap-4 p-5 max-w-[500px] w-full mx-auto rounded-xl">
+      <div>
+        <h1 class="text-[#e0e0e0] font-[AvaraBold] text-[70px] font-normal text-center sm:text-[50px]">Todolist</h1>
+      </div>
       <div class="lists grid gap-2 w-full">
-        <input type="text" id="ListInput" placeholder="What needs to be done?" class="bg-[#d8c7ab] h-[50px] w-full p-[10px] text-lg outline-none focus:border-2 focus:border-black">
+        <input type="text" id="ListInput" placeholder="What needs to be done?" class="bg-[#374151] text-[#e0e0e0] placeholder-[#a0a0a0] h-[50px] w-full p-[10px] text-lg outline-none border border-[#4b5563] focus:border-2 focus:border-[#8b5cf6] transition">
         <div class="element_container w-full" id="elementContainer">
-        </div> 
+        </div>  
       </div>
 
-      <button id="clearAll" type="button" class="font-[AvaraBold] text-black">Clear All</button>
+      <button id="clearAll" type="button" class="font-[AvaraBold] text-[#e0e0e0] bg-[#3b82f6] hover:bg-[#2563eb] px-4 py-2 rounded transition">Clear All</button>
     </div>
   </body>
   <script src="main.js"></script>
