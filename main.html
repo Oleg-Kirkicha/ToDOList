@@ -1,24 +1,25 @@
-<html>
-<head>
-    <link rel="stylesheet" href="main.css">
-<title>Todolist</title>
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/avara" type="text/css"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link href="style.css" rel="stylesheet"> 
+  </head>
+  <body class="bg-[#1e1e1e]">
+    <div id="all" class="bg-[#2c2c2c] grid grid-cols-1 gap-4 p-5 max-w-[500px] w-full mx-auto rounded-xl">
+      <div>
+        <h1 class="text-[#e0e0e0] font-[AvaraBold] text-[70px] font-normal text-center sm:text-[50px]">Todolist</h1>
+      </div>
+      <div class="lists grid gap-2 w-full">
+        <input type="text" id="ListInput" placeholder="What needs to be done?" class="bg-[#374151] text-[#e0e0e0] placeholder-[#a0a0a0] h-[50px] w-full p-[10px] text-lg outline-none border border-[#4b5563] focus:border-2 focus:border-[#8b5cf6] transition">
+        <div class="element_container w-full" id="elementContainer">
+        </div>  
+      </div>
 
-</head>
-<body>
-    
-    <div id="all">
-
-        <h1>Todolist</h1>
-        <div class="lists">
-        <input type="text" id="ListInput" placeholder="What needs to be done?">
-
-        <div id="list" class="list">
-
-            <div id="element" class="element"><input type="checkbox" class="checkbox"><p>Text of work</p></div>
-
-        </div>
-        </div>
-        <script src="next.js"> </script>
+      <button id="clearAll" type="button" class="font-[AvaraBold] text-[#e0e0e0] bg-[#3b82f6] hover:bg-[#2563eb] px-4 py-2 rounded transition">Clear All</button>
     </div>
-</body>
+  </body>
+  <script src="main.js"></script>
 </html>
