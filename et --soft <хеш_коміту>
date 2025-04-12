@@ -1,0 +1,35 @@
+[33mcommit ee8a479591b023cfc308ef46c64a044123f8fe8b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature-addScript[m[33m, [m[1;31morigin/feature-addScript[m[33m)[m
+Author: Olegkirkicha <olegkirkicha@gmail.com>
+Date:   Sat Apr 12 13:18:53 2025 +0300
+
+    fix:formatted
+
+[33mcommit 127cd1e128ef7be1223c49869da6602fb8b93453[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: Olegkirkicha <olegkirkicha@gmail.com>
+Date:   Sat Apr 12 12:34:31 2025 +0300
+
+    feat: add a script for adding and saving new items
+
+[33mcommit cc7b19d86ca8d346aa409f1849497a94e45a4eac[m[33m ([m[1;31morigin/TodoNext.js[m[33m, [m[1;32mfeature/add-script[m[33m, [m[1;32mFeature-add_script[m[33m)[m
+Author: Olegkirkicha <olegkirkicha@gmail.com>
+Date:   Sun Apr 6 09:44:58 2025 +0300
+
+    Переписано на Next.js
+
+[33mcommit e6a8d270994cd030e950d8f0dd3cd23045a50b46[m[33m ([m[1;32mTodoNext.js[m[33m)[m
+Author: Olegkirkicha <olegkirkicha@gmail.com>
+Date:   Mon Mar 17 21:14:32 2025 +0000
+
+    зробив стилі трохи кращими
+
+[33mcommit 46b2dc722d5bf43ad0b1cf890b81ab5dd642e551[m
+Author: Olegkirkicha <olegkirkicha@gmail.com>
+Date:   Mon Mar 17 20:46:11 2025 +0000
+
+    змінені стилі
+
+[33mcommit 3ec5d2eec6f2860554928c3dad66217690305fba[m
+Author: Olegkirkicha <olegkirkicha@gmail.com>
+Date:   Mon Mar 17 20:10:16 2025 +0000
+
+    First Comit
