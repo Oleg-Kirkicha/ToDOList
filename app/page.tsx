@@ -19,10 +19,6 @@ const HomePage = () => {
     }
   }, []);
 
-  type CheckboxImageProps = {
-    checked: boolean;
-    onToggle: () => void;
-  };
 
   useEffect(() => {
     localStorage.setItem('todoItems', JSON.stringify(items));
