@@ -1,6 +1,5 @@
 'use client';
 import Head from 'next/head';
-import Script from 'next/script'
 import '../styles/global.css';
 import { useState, useEffect, KeyboardEvent, ChangeEvent } from 'react';
 
