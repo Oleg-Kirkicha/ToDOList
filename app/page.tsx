@@ -45,19 +45,6 @@ const HomePage = () => {
     setItems(items.filter((_, i) => i !== index));
   };
 
-  const CheckboxImage = ({ checked, onToggle }: CheckboxImageProps) => {
-    return (
-      <button onClick={onToggle} className="focus:outline-none">
-        <Image
-          src={checked ? "/checked.svg" : "/unchecked.svg"}
-          alt={checked ? "Позначено" : "Не позначено"}
-          width={24}
-          height={24}
-          className="transition-all"
-        />
-      </button>
-    );
-  };
   return (
     <>
       <Head>
