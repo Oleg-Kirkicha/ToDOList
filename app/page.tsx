@@ -65,32 +65,34 @@ const HomePage = () => {
               onKeyDown={handleKeyDown}
               className="bg-[#374151] text-[#e0e0e0] placeholder-[#a0a0a0] h-[50px] w-full p-[10px] text-lg outline-none border border-[#4b5563] focus:border-2 focus:border-[#8b5cf6] transition"
             />
-            <div className="element_container w-full" id="elementContainer">
-            {items.map((item, index) => (
-                <div
-                  key={index}
-                  className="element bg-[#2c2c2c] min-h-[10%] w-full grid grid-cols-[24px_1fr] gap-2 p-2 border border-[#3a3a3a] rounded-md"
-                >
-                <input
-                  type="checkbox"
-                  checked={item.checked}
-                  onChange={() => toggleCheck(index)}
-                  className="checkbox w-[24px] h-[24px] rounded-[6px] bg-[#374151] border-[#4b5563] cursor-pointer transition-all focus:ring-0 checked:bg-[#4ade80] checked:border-[#22c55e]"
-                />
-                <p
-                  className={`text-[#e0e0e0] font-[AvaraBold] font-bold text-[18px] leading-relaxed px-[10px] sm:text-[16px] max-w-full overflow-hidden break-words ${item.checked ? 'text-line-through' : ''}`}
-                >
-                  {item.text}
-                </p>
-                  <button
-                    onClick={() => removeItem(index)}
-                    className="deleteButton w-20 text-center text-white font-[AvaraBold] rounded text-sm border border-white py-1 hover:bg-black hover:text-red-500 transition-all duration-200"
+            {items.length > 0 ? (
+              <div className="element_container w-full" id="elementContainer">
+              {items.map((item, index) => (
+                  <div
+                    key={index}
+                    className="element bg-[#2c2c2c] min-h-[10%] w-full grid grid-cols-[24px_1fr] gap-2 p-2 border border-[#3a3a3a] rounded-md"
                   >
-                    Delete
-                  </button>
-                </div>
-              ))}
-            </div>
+                  <input
+                    type="checkbox"
+                    checked={item.checked}
+                    onChange={() => toggleCheck(index)}
+                    className="checkbox w-[24px] h-[24px] rounded-[6px] bg-[#374151] border-[#4b5563] cursor-pointer transition-all focus:ring-0 checked:bg-[#4ade80] checked:border-[#22c55e]"
+                  />
+                  <p
+                    className={`text-[#e0e0e0] font-[AvaraBold] font-bold text-[18px] leading-relaxed px-[10px] sm:text-[16px] max-w-full overflow-hidden break-words ${item.checked ? 'text-line-through' : ''}`}
+                  >
+                    {item.text}
+                  </p>
+                    <button
+                      onClick={() => removeItem(index)}
+                      className="deleteButton w-20 text-center text-white font-[AvaraBold] rounded text-sm border border-white py-1 hover:bg-black hover:text-red-500 transition-all duration-200"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                ))}
+              </div>
+            ) : null}
           </div>
           <button
             id="clearAll"
