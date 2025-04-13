@@ -54,7 +54,7 @@ const HomePage = () => {
         <title>Todolist</title>
       </Head>
 
-      <div className="bg-[#1e1e1e] w-full h-screen flex items-center justify-center">
+      <div className="page-container bg-[#1e1e1e] w-full h-screen flex items-center justify-center">
         <div id="all" className="bg-[#2c2c2c] grid grid-cols-1 gap-4 p-5 max-w-[500px] w-full mx-auto rounded-xl">
           <div>
             <h1 className="text-[#e0e0e0] font-[AvaraBold] text-[70px] font-normal text-center sm:text-[50px]">Todolist</h1>
