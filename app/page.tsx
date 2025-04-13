@@ -2,7 +2,7 @@
 import Head from 'next/head';
 import '../styles/global.css';
 import { useState, useEffect, KeyboardEvent, ChangeEvent } from 'react';
-
+import Image from "next/image";
 interface TodoItem {
   text: string;
   checked: boolean;
@@ -18,6 +18,11 @@ const HomePage = () => {
       setItems(JSON.parse(stored));
     }
   }, []);
+
+  type CheckboxImageProps = {
+    checked: boolean;
+    onToggle: () => void;
+  };
 
   useEffect(() => {
     localStorage.setItem('todoItems', JSON.stringify(items));
@@ -40,6 +45,19 @@ const HomePage = () => {
     setItems(items.filter((_, i) => i !== index));
   };
 
+  const CheckboxImage = ({ checked, onToggle }: CheckboxImageProps) => {
+    return (
+      <button onClick={onToggle} className="focus:outline-none">
+        <Image
+          src={checked ? "/checked.svg" : "/unchecked.svg"}
+          alt={checked ? "Позначено" : "Не позначено"}
+          width={24}
+          height={24}
+          className="transition-all"
+        />
+      </button>
+    );
+  };
   return (
     <>
       <Head>
@@ -49,7 +67,7 @@ const HomePage = () => {
         <title>Todolist</title>
       </Head>
 
-      <div className="bg-[#1e1e1e] w-full h-screen">
+      <div className="bg-[#1e1e1e] w-full h-screen flex items-center justify-center">
         <div id="all" className="bg-[#2c2c2c] grid grid-cols-1 gap-4 p-5 max-w-[500px] w-full mx-auto rounded-xl">
           <div>
             <h1 className="text-[#e0e0e0] font-[AvaraBold] text-[70px] font-normal text-center sm:text-[50px]">Todolist</h1>
@@ -71,15 +89,25 @@ const HomePage = () => {
                     key={index}
                     className="element bg-[#2c2c2c] min-h-[10%] w-full grid grid-cols-[24px_1fr] gap-2 p-2 border border-[#3a3a3a] rounded-md"
                   >
-                  <input
-                    type="checkbox"
-                    checked={item.checked}
-                    onChange={() => toggleCheck(index)}
-                    className="checkbox w-[24px] h-[24px] rounded-[6px] bg-[#374151] border-[#4b5563] cursor-pointer transition-all focus:ring-0 checked:bg-[#4ade80] checked:border-[#22c55e]"
-                  />
-                  <p
-                    className={`text-[#e0e0e0] font-[AvaraBold] font-bold text-[18px] leading-relaxed px-[10px] sm:text-[16px] max-w-full overflow-hidden break-words ${item.checked ? 'text-line-through' : ''}`}
-                  >
+                    <button
+                      onClick={() => toggleCheck(index)}
+                      className="focus:outline-none w-[24px] h-[24px] border-[#4b5563] rounded-[6px] cursor-pointer"
+                      >
+                      <Image
+                        src={item.checked ? "/circle_ok.svg" : "/circle.svg"}
+                        alt={item.checked ? "Checked" : "Unchecked"}
+                        width={24}
+                        height={24}
+                        className="transition-all"
+                      />
+                    </button>
+                    <p
+                      className={`text-[#e0e0e0] font-[AvaraBold] font-bold text-[20px] leading-relaxed px-[10px] sm:text-[16px] max-w-full overflow-hidden break-words ${item.checked ? 'line-through' : ''}`}
+                      style={{ 
+                        textDecoration: item.checked ? 'line-through' : 'none', 
+                        textDecorationColor: item.checked ? 'black' : 'transparent'
+                      }}
+                    >
                     {item.text}
                   </p>
                     <button
