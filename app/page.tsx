@@ -107,7 +107,7 @@ const HomePage = () => {
                   onClick={toggleAll}
                   className="font-[AvaraBold] text-[#e0e0e0] bg-[#10b981] hover:bg-[#059669] px-4 py-2 rounded transition"
                 >
-                  {items.every(item => item.checked) ? 'Done All' : 'Undone All'}
+                  {items.every(item => item.checked) ? 'Undone All':'Done All' }
                 </button>
               )}
             </div>
