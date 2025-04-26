@@ -1,7 +1,7 @@
 'use client';
 import Head from 'next/head';
 import '../styles/global.css';
-import { useState, useEffect, KeyboardEvent, ChangeEvent } from 'react';
+import { useState, useEffect, useRef, KeyboardEvent, ChangeEvent } from 'react';
 import Image from "next/image";
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -13,6 +13,10 @@ interface TodoItem {
 const HomePage = () => {
   const [items, setItems] = useState<TodoItem[]>([]);
   const [inputValue, setInputValue] = useState<string>('');
+  const [filterChecked, setFilterChecked] = useState<boolean | null>(null);
+  const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
+  const dragItem = useRef<number | null>(null);
+  const dragOverItem = useRef<number | null>(null);
 
   useEffect(() => {
     const stored = localStorage.getItem('todoItems');
@@ -32,8 +36,6 @@ const HomePage = () => {
     }
   };
 
-  const [filterChecked, setFilterChecked] = useState<boolean | null>(null);
-
   const toggleCheck = (index: number) => {
     const updated = [...items];
     updated[index].checked = !updated[index].checked;
@@ -48,6 +50,30 @@ const HomePage = () => {
     const allChecked = items.every(item => item.checked);
     const updated = items.map(item => ({ ...item, checked: !allChecked }));
     setItems(updated);
+  };
+
+  const handleDragStart = (index: number) => {
+    dragItem.current = index;
+    setDraggedIndex(index);
+  };
+
+  const handleDragEnter = (index: number) => {
+    dragOverItem.current = index;
+  };
+
+  const handleDrop = () => {
+    const dragFrom = dragItem.current;
+    const dragTo = dragOverItem.current;
+    if (dragFrom === null || dragTo === null || dragFrom === dragTo) return;
+
+    const updatedItems = [...items];
+    const draggedItem = updatedItems.splice(dragFrom, 1)[0];
+    updatedItems.splice(dragTo, 0, draggedItem);
+
+    setItems(updatedItems);
+    dragItem.current = null;
+    dragOverItem.current = null;
+    setDraggedIndex(null);
   };
 
   return (
@@ -107,7 +133,7 @@ const HomePage = () => {
                   onClick={toggleAll}
                   className="font-[AvaraBold] text-[#e0e0e0] bg-[#10b981] hover:bg-[#059669] px-4 py-2 rounded transition"
                 >
-                  {items.every(item => item.checked) ? 'Undone All':'Done All' }
+                  {items.every(item => item.checked) ? 'Undone All' : 'Done All'}
                 </button>
               )}
             </div>
@@ -126,7 +152,12 @@ const HomePage = () => {
                         transition={{ duration: 0.3 }}
                       >
                         <div
-                          className="element bg-[#2c2c2c] min-h-[10%] w-full grid grid-cols-[24px_1fr] gap-2 p-2 border border-[#3a3a3a] rounded-md"
+                          className={`element bg-[#2c2c2c] min-h-[10%] w-full grid grid-cols-[24px_1fr] gap-2 p-2 border border-[#3a3a3a] rounded-md transition-all duration-200 ${draggedIndex === index ? 'ring-2 ring-violet-500 scale-105' : ''}`}
+                          draggable
+                          onDragStart={() => handleDragStart(index)}
+                          onDragEnter={() => handleDragEnter(index)}
+                          onDragOver={(e) => e.preventDefault()}
+                          onDrop={handleDrop}
                         >
                           <button
                             onClick={() => toggleCheck(index)}
